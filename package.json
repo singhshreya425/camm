@@ -1,0 +1,26 @@
+{
+  "name": "camm",
+  "version": "1.0.0",
+  "description": "REST APIs for Camera and Camera Networks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/singhshreya425/camm.git"
+  },
+  "author": "Shreya Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/singhshreya425/camm/issues"
+  },
+  "homepage": "https://github.com/singhshreya425/camm#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.3",
+    "node-modules": "^1.0.1",
+    "nodemon": "^2.0.22"
+  }
+}
