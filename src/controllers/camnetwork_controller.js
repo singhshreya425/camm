@@ -1,6 +1,10 @@
 const CameraNetworks = require('../models/camnetwork_model');
 
-// POST a new camera network
+
+/////////////////////////////////////////////////////// POST a new camera network/////////////////////////////////////////////
+
+//createNetwork handles the creation of a new camera network.
+
 const createNetwork = async function(req, res) {
     try {
       const network = new CameraNetworks(req.body);
@@ -12,7 +16,11 @@ const createNetwork = async function(req, res) {
   }
   };
   
-// GET all camera networks
+
+////////////////////////////////////////////////// GET all camera networks///////////////////////////////////////////////////////////////////
+
+//getNetworks retrieves all camera networks with the populate method to include associated cameras in the response.
+
 const getNetworks = async function (req, res)  {
   try {
     const networks = await CameraNetworks.find({}).populate('cameras');
@@ -22,7 +30,11 @@ const getNetworks = async function (req, res)  {
   }
 };
 
-// GET a camera network by ID
+
+/////////////////////////////////////////////////////////////////// GET a camera network by ID///////////////////////////////////////////////////////
+
+//getNetworkById retrieves a specific camera network by its ID with associated cameras.
+
 const getNetworkById = async function(req, res)  {
   try {
     const network = await CameraNetworks.findById(req.params.id).populate('cameras');
@@ -33,8 +45,11 @@ const getNetworkById = async function(req, res)  {
 };
 
 
-// Update an existing Camera Network by ID
-const updateNetwork = async (req, res) => {
+/////////////////////////////////////////////// Update an existing Camera Network by ID/////////////////////////////////////////////////////////////////
+
+//updateNetwork updates an existing camera network with the specified ID.
+
+const updateNetwork = async function(req, res) {
     try {
       const updatedNetwork = await CameraNetworks.findByIdAndUpdate(
         req.params.id,
@@ -52,8 +67,12 @@ const updateNetwork = async (req, res) => {
     }
   };
   
-  // Delete an existing Camera Network by ID
-  const deleteNetwork = async (req, res) => {
+
+  //////////////////////////////////// Delete an existing Camera Network by ID///////////////////////////////////////////////////
+  
+  //deleteNetwork deletes a camera network by its ID.
+
+  const deleteNetwork = async function(req, res)  {
     try {
       const deletedNetwork = await CameraNetworks.findByIdAndDelete(req.params.id);
   
@@ -66,5 +85,6 @@ const updateNetwork = async (req, res) => {
       res.status(500).json({ message: error.message });
     }
   };
+
 
 module.exports={getNetworks,getNetworkById,createNetwork,updateNetwork,deleteNetwork}

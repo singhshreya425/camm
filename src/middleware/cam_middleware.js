@@ -1,6 +1,8 @@
 const CameraNetworks = require('../models/camnetwork_model');
 
-async function validateNetworkId(req, res, next) {
+//"Export middleware function to validate Camera Network ID in request parameters".
+
+const validateNetworkId = async function (req, res, next) {
   const { id } = req.params;
   try {
     const network = await CameraNetworks.findById(id);

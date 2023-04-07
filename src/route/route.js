@@ -4,6 +4,7 @@ const cameraController = require('../controllers/cam_controller');
 const cameraNetworksController = require('../controllers/camnetwork_controller');
 const { validateNetworkId } =require('../middleware/cam_middleware')
 
+////////////////////////////////////////////////////////Camera routes////////////////////////////////////////////////////////////////////
 
 // CREATE a new camera
 router.post('/createcam', cameraController.createCamera);
@@ -20,7 +21,8 @@ router.put('/updatecam/:id', cameraController.updateCamera);
 // DELETE a camera by ID
 router.delete('/deletecam/:id', cameraController.deleteCamera);
 
-// Camera Networks routes
+
+//////////////////////////////////////// Camera Networks routes/////////////////////////////////////////////////////////////////////////
 
 //Create a new network
 router.post('/networks', cameraNetworksController.createNetwork);
@@ -36,7 +38,6 @@ router.put('/networks/:id',  validateNetworkId,cameraNetworksController.updateNe
 
 //Delete network by ID
 router.delete('/networks/:id',  validateNetworkId,cameraNetworksController.deleteNetwork);
-
 
 
 

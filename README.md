@@ -7,6 +7,7 @@
  Clone the repository.
 
 Install the dependencies using npm install.
+=> npx nodemon src/index.js
 
 # Camera Entity
 
